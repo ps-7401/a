@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>F値 計算アプリ</title>
+
+    <!-- SEO & Social Sharing -->
+    <meta name="description" content="食品製造における殺菌効果の指標であるF値を計算するアプリケーションです。時間と温度を入力し、85℃におけるF値(F85, Z=7.8)と121.1℃におけるF値(F0, Z=10)を計算します。"/>
+    <meta property="og:title" content="F値 計算アプリ" />
+    <meta property="og:description" content="加熱時間と温度から、低温殺菌(F85)と商業的殺菌(F0)の指標となるF値を素早く計算します。" />
+    <meta property="og:type" content="website" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#4f46e5" />
+    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%234f46e5"><path fill-rule="evenodd" d="M12.5 4.5a.75.75 0 00-1.5 0v6.416a3.75 3.75 0 101.5 0V4.5zM12 15a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" clip-rule="evenodd" /></svg>'>
+
+    <!-- 1. ES Module Shims for importmap support in all browsers -->
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.10.0/dist/es-module-shims.js"></script>
+
+    <!-- 2. Import Map for libraries -->
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react/": "https://esm.sh/react@^19.1.1/"
+  }
+}
+</script>
+    
+    <!-- 3. Other Libraries and Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'media', 
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- 4. Babel Standalone for live JSX/TSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <noscript>このアプリを実行するにはJavaScriptを有効にする必要があります。</noscript>
+    <div id="root"></div>
+
+    <!-- 5. Main application script, transformed by Babel -->
+    <script type="text/babel" data-type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
